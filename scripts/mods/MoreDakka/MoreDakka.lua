@@ -24,9 +24,6 @@ end
 mod.on_game_state_changed = function(status, state)
 	if status == "enter" and state == "StateIngame" then
 		mod.is_ready = true
-		-- for key, _ in pairs(BuffTemplates) do
-		-- 	mod:error(key)
-		-- end
 	end
 end
 
@@ -48,23 +45,6 @@ mod.remove_buffs = function()
 
 		end
 	end
-
-	-- if Managers.player.is_server then
-	-- 	local players = Managers.player:human_and_bot_players()
-
-	-- 	for _, player in pairs(players) do
-	-- 		local unit = player.player_unit
-	-- 		if Unit.alive(unit) then
-	-- 			local buff_extension = ScriptUnit.has_extension(unit, "buff_system")
-    --             for _, buff in ipairs(BUFFS) do 
-    --                 if buff_extension and buff_extension:has_buff_type(buff) then
-    --                     local inf_ammo_buff = buff_extension:get_non_stacking_buff(buff)
-    --                     buff_extension:remove_buff(inf_ammo_buff.id)
-    --                 end
-    --             end
-	-- 	    end
-	-- 	end
-	-- end
 end
 
 mod.refresh_buffs = function()
@@ -81,35 +61,6 @@ mod.refresh_buffs = function()
 					buff_extension:add_buff("twitch_speed_boost")
 				end
 			end
-			-- if buff_extension and buff_extension:has_buff_type("markus_huntsman_headshot_no_ammo_count_buff") then
-			-- 	local buff = buff_extension:get_non_stacking_buff("markus_huntsman_headshot_no_ammo_count_buff")
-			-- 	buff_extension:remove_buff(buff.id)
-			-- end
-
-			-- if buff_extension and buff_extension:has_buff_type("twitch_attack_speed_buff") then
-			-- 	local buff = buff_extension:get_non_stacking_buff("twitch_speed_boost")
-			-- 	buff_extension:remove_buff(buff.id)
-			-- end
-
 		end
 	end
-
-	-- if Managers.player.is_server then
-	-- 	local players = Managers.player:human_and_bot_players()
-
-	-- 	for _, player in pairs(players) do
-	-- 		local unit = player.player_unit
-
-	-- 		if Unit.alive(unit) then
-	-- 			local buff_extension = ScriptUnit.has_extension(unit, "buff_system")
-    --             for _, buff in ipairs(BUFFS) do 
-    --                 if buff_extension and not buff_extension:has_buff_type(buff) then
-    --                     local buff_system = Managers.state.entity:system("buff_system")
-    --                     local server_controlled = false
-    --                     buff_system:add_buff(unit, buff, unit, server_controlled)
-    --                 end
-    --             end
-	-- 		end
-	-- 	end
-	-- end
 end
