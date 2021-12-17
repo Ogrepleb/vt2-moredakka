@@ -1,0 +1,11 @@
+mod = [
+	"MoreDakka"
+]
+
+package = [
+	"resource_packages/MoreDakka/MoreDakka"
+]
+
+lua = [
+	"scripts/mods/MoreDakka/*"
+]
